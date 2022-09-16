@@ -6,6 +6,6 @@ package cl.globallogic.bci.dao;
 /**
  *
  */
-public class UserRespository {
+public class UserRepository {
 
 }
