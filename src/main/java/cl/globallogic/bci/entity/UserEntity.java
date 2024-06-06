@@ -10,6 +10,9 @@ import java.util.UUID;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import lombok.Getter;
@@ -22,6 +25,8 @@ import lombok.Setter;
 @Setter
 @Entity
 public class UserEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
     private String name;
@@ -30,7 +35,7 @@ public class UserEntity {
 
     private String password;
 
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "id", cascade = CascadeType.ALL)
     private List<PhoneEntity> phones;
 
     private LocalDateTime created;

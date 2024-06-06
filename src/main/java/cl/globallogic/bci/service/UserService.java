@@ -3,17 +3,12 @@
  */
 package cl.globallogic.bci.service;
 
-import org.springframework.stereotype.Service;
+import cl.globallogic.bci.dto.UserDTO;
+import cl.globallogic.bci.dto.UserRequestDTO;
 
-import cl.globallogic.bci.dao.UserRepository;
-
-
-/**
- *
- */
-@Service
-public class UserService {
+public interface UserService {
 	
-	private UserRepository userRepository;
-
+	public UserDTO signUp(UserRequestDTO userRequestDTO);
+	
+	public UserDTO login(String uuid);
 }
